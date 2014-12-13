@@ -33,7 +33,7 @@
     },
     "installed_plugins": {
         "com.randdusing.bluetoothle": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
+            "PACKAGE_NAME": "com.phonegap.hm10terminal"
         }
     },
     "dependent_plugins": {}

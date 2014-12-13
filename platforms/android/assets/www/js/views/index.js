@@ -2,10 +2,12 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!html/index.html',
-    'text!html/item.html',
+    'router',
+    'controllers/device',
+    'text!html/index/index.html',
+    'text!html/index/item.html',
     'text!html/error.html'
-], function($, _, Backbone, _index, _item, _error){
+], function($, _, Backbone, Router, Device, _index, _item, _error){
 
     var IndexView = Backbone.View.extend({
         initialize: function(){
@@ -18,12 +20,13 @@ define([
         },
 
         selectDevice: function(e){
-            bluetoothle.stopScan();
+            //bluetoothle.stopScan();
+            this.stopScan();
 
             var address = $(e.target).data("address");
-            console.log("connecting: " + address);
+            //console.log("connecting: " + address);
 
-            var el = this.$el;
+            //var el = this.$el;
             /*
             bluetoothle.discover(function(result){
                 if(result.status == "discovered") {
@@ -34,9 +37,15 @@ define([
 
             }, function(){}, {address: address});
             */
+            //el.prop("disabled", true);
+            /*
             bluetoothle.connect(function(result){
                 console.log(JSON.stringify(result));
-            },function(){}, {address: address});
+                if(result.status == "connected") {
+
+                }
+            },function(){}, {address: address});*/
+            Router.navigate("device/" + address + "/" + $(e.target).html(), {trigger: true});
         },
 
         stopScan: function(){
@@ -47,6 +56,7 @@ define([
         },
 
         startScan: function(){
+            bluetoothle.stopScan();
             $("#do-scan").hide();
             $("#stop-scan").show();
             var $el = this.$el;
@@ -69,6 +79,16 @@ define([
             var $el = this.$el;
 
             bluetoothle.initialize(function(){
+                console.log("btle init");
+
+                if(typeof(bluetoothle.currentAddress) != 'undefined') {
+                    bluetoothle.disconnect(function () {
+                        bluetoothle.close(null, null, {address: bluetoothle.currentAddress});
+                    }, null, {address: bluetoothle.currentAddress});
+                }
+
+                bluetoothle.stopScan();
+
                 $el.html( _index );
             }, function(){
                 $el.html(error({error: "Bluetooth initialize error. Please enable bluetooth and restart the app."}))
