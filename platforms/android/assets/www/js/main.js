@@ -11,5 +11,7 @@ require([
     'jquery',
     'router'
 ], function($, router){
-
+    router.on("route", function(route, params) {
+        $("#nav-container-collapse").removeClass("in");
+    });
 });

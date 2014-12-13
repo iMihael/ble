@@ -28,16 +28,8 @@ define([
 
 
                 bluetoothle.discover(function(result){
-                    //$("#device-content").html(error({error:"Service discovery error."}));
                     if(result.status == "discovered") {
-                        //$("#device-content").html(JSON.stringify(result));
-                        //var $list = $("<ul id=\"device-list\"></ul>");
-                        //$("#device-content").append($list);
                         $("#device-list").append("<li>Connected!</li>");
-                        /*for(var service in result.services) {
-                            $list.append("<li>"+JSON.stringify(result.services[service])+"</li>");
-                        }*/
-
 
                         bluetoothle.subscribe(function(result){
                             if(result.status == "subscribedResult") {

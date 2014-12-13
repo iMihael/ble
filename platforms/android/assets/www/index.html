@@ -20,30 +20,58 @@
     under the License.
 -->
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<head>
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 
-        <title>BLE Terminal</title>
-    </head>
-    <body>
+    <title>BLE Terminal</title>
+</head>
+<body>
 
-        <script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
 
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    app.initialize();
+</script>
+<script type="text/javascript" src="js/libs/jquery.js"></script>
+<script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+<script type="text/javascript" data-main="js/main" src="js/libs/require.js"></script>
 
-        <script type="text/javascript" data-main="js/main" src="js/libs/require.js"></script>
 
-
-        <div id="container" class="container well">
-
+<nav id="nav-container" class="navbar-default navbar-fixed-top navbar" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-container-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span></button>
+            <a class="navbar-brand"
+               href="#index">
+                VeraProject
+               </a>
         </div>
-    </body>
+        <div id="nav-container-collapse" class="collapse navbar-collapse">
+            <ul id="w0" class="navbar-nav navbar-left nav">
+
+            </ul>
+            <ul id="actions" class="navbar-nav navbar-right nav">
+                <li ><a href="#index">Devices</a></li>
+                <li ><a href="#addDevice">Add device</a></li>
+                <!--<li id="login-li"><a href="/site/login">Login</a></li>-->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="container" class="container well" style="padding-top:100px;">
+
+</div>
+</body>
 </html>

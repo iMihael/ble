@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.phonegap.hm10terminal;
+package com.phonegap.veraproject;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

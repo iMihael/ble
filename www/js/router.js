@@ -6,7 +6,13 @@ define([
         routes: {
             "": "index",
             "index": "index",
-            "device/:address/:name": "device"
+            "device/:address/:name": "device",
+            "addDevice": "addDevice"
+        },
+        addDevice: function(){
+            require(['controllers/addDevice'], function(m){
+                m.init();
+            });
         },
         device: function(address, name){
             require(['controllers/device'], function(m){
@@ -17,10 +23,6 @@ define([
             require(['controllers/index'], function(m){
                 m.init();
             });
-        },
-        _default: function(route){
-            //console.log(route);
-            //document.write(route);
         }
     });
 
