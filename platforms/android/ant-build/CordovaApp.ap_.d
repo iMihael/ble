@@ -29,7 +29,6 @@
 /home/mihael/Projects/ble/platforms/android/ant-build/res/drawable-land-mdpi/screen.png \
 /home/mihael/Projects/ble/platforms/android/assets/www \
 /home/mihael/Projects/ble/platforms/android/assets/_where-is-www.txt \
-/home/mihael/Projects/ble/platforms/android/assets/www/_icon.png \
 /home/mihael/Projects/ble/platforms/android/assets/www/css \
 /home/mihael/Projects/ble/platforms/android/assets/www/img \
 /home/mihael/Projects/ble/platforms/android/assets/www/index.html \
