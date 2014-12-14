@@ -22,6 +22,24 @@ define([], function(){
         }
     };
 
+    var getByName = function(name){
+        for(var i=0;i<devices.length;i++){
+            if(devices[i].name == name){
+                return devices[i];
+            }
+        }
+        return false;
+    };
+
+    var getByAddress = function(address){
+        for(var i=0;i<devices.length;i++){
+            if(devices[i].address == address){
+                return devices[i];
+            }
+        }
+        return false;
+    };
+
     var addDevice = function(name, address){
         var push = true;
 
@@ -54,7 +72,9 @@ define([], function(){
         devices: devices,
         addDevice: addDevice,
         deleteDevice: deleteDevice,
-        deleteAllDevices: deleteAllDevices
+        deleteAllDevices: deleteAllDevices,
+        getByName: getByName,
+        getByAddress: getByAddress
     };
 
 });

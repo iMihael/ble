@@ -15,11 +15,12 @@ define([
         bluetoothle.currentAddress = address;
 
         var view = new DeviceView({
-            el: $("#container"),
+            //el: $("#container"),
             address: address,
             name: name
         });
         view.render();
+        $("#container").html(view);
 
         var error = _.template(_error);
 

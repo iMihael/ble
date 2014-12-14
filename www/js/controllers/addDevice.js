@@ -8,9 +8,10 @@ define([
     var init = function(){
 
         var view = new AddDeviceView({
-            el: $("#container")
+            //el: $("#container")
         });
         view.render();
+        $("#container").html(view.$el);
 
     };
 

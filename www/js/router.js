@@ -7,7 +7,12 @@ define([
             "": "index",
             "index": "index",
             "device/:address/:name": "device",
-            "addDevice": "addDevice"
+            "addDevice": "addDevice",
+            "exit": "exit"
+        },
+        exit: function(){
+            navigator.app.exitApp();
+            navigator.device.exitApp();
         },
         addDevice: function(){
             require(['controllers/addDevice'], function(m){
