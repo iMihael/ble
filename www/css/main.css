@@ -14,3 +14,73 @@
     background: red;
 }
 
+.battery {
+    display: inline-block;
+    width: 4.5em;
+    height: 10em;
+    border: 1em solid white;
+    border-width: .5em 1em;
+    box-shadow: 0 0 0 1.5em black;
+
+    margin: 4em 1.5em 1.5em;
+
+    position: relative;
+    background-color: black;
+    background-image: linear-gradient(180deg,
+    white .5em,
+    white .5em,
+    transparent .5em,
+    transparent 2em,
+    white 2em,
+    white 3em,
+    transparent 3em,
+    transparent 4.5em,
+    white 4.5em,
+    white 5.5em,
+    transparent 5.5em,
+    transparent 7em,
+    white 7em,
+    white 8em,
+    transparent 8em,
+    transparent 9.5em,
+    white 9.5em
+    );
+    background-size: 100%;
+}
+.battery:before {
+    position: absolute;
+    top: -4.5em;
+    left: 0em;
+    display: block;
+    background: black;
+    width: 4.5em;
+    height: 1.5em;
+    content : "";
+
+    border-radius: 1em 1em 0 0;
+}
+.battery:after {
+    position: absolute;
+    top: 0em;
+    left: 0em;
+    display: block;
+    background: white;
+    width: 4.5em;
+    height: 0;
+    content : "";
+}
+.battery.level-75:after {
+    height: 2em;
+}
+.battery.level-50:after {
+    height: 4.5em;
+}
+.battery.level-25:after {
+    height: 7em;
+}
+.battery.level-25 {
+    background-color: red;
+}
+.battery.level-0:after {
+    height: 9.5em;
+}
